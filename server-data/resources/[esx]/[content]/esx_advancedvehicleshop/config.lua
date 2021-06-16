@@ -6,7 +6,8 @@ Config.Main = {
 	-- looks like this: 'LLL NNN' The maximum plate length is 8 chars (including spaces & symbols), don't go past it!
 	PlateLetters = 3,
 	PlateNumbers = 3,
-	PlateUseSpace = true
+	PlateUseSpace = true,
+	UseBankAccount = true
 }
 
 Config.Ambulance = {
