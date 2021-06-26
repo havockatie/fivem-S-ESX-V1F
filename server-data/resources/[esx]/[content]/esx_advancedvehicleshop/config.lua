@@ -54,7 +54,7 @@ Config.Aircraft = {
 Config.Boat = {
 	Shop = true, -- true = Use Boat Shop | false = Does Opposite
 	Blips = true, -- true = Use Boat Blip | false = Does Opposite
-	Blip = {Coords = vector3(-714.3, -1297.3, 4.1), Sprite = 410, Color = 3, Display = 4, Scale = 1.0},
+	Blip = {Coords = vector3(-774.31, -1434.39, 0.5), Sprite = 410, Color = 3, Display = 4, Scale = 1.0},
 	License = true, -- Requires License to Buy Boats.
 	ResellPerc = 50 -- The Resell % of Vehicles Sold | Example: $10,000 / 50% = $5,000 Back
 }
@@ -257,21 +257,21 @@ Config.Zones = {
 	},
 	-- Boat Shop
 	ShopEnteringBoat = {
-		Pos    = vector3(-806.46, -1350.9, 4.22),
+		Pos    = vector3(-774.31, -1434.39, 0.5),
 		Marker = {r = 0, g = 17, b = 255},
 		Size   = {x = 1.5, y = 1.5, z = 1.0},
 		Type   = 1,
 		ShopId = 6
 	},
 	ShopInsideBoat = {
-		Pos     = vector3(-816.15, -1421.98, -0.4),
+		Pos     = vector3(-785.4, -1430.0, 0.11),
 		Size    = {x = 1.5, y = 1.5, z = 1.0},
 		Heading = 138.4,
 		Type    = -1,
 		ShopId  = 6
 	},
 	ShopOutsideBoat = {
-		Pos     = vector3(-782.05, -1421.35, -0.4),
+		Pos     = vector3(-785.4, -1430.0, 0.11),
 		Size    = {x = 1.5, y = 1.5, z = 1.0},
 		Heading = 141.35,
 		Type    = -1,

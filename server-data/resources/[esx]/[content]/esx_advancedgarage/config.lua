@@ -2,7 +2,7 @@ Config = {}
 Config.Locale = 'en'
 
 Config.Main = {
-	DrawDistance = 20, -- Draw Distance to Markers.
+	DrawDistance = 40, -- Draw Distance to Markers.
 	Commands = false, -- Will allow players to do /getproperties instead of having to log out & back in to see Private Garages.
 	ParkVehicles = true, -- true = Automatically Park all Vehicles in Garage on Server/Script Restart | false = Opposite of true but players will have to go to Pound to get their Vehicle Back.
 	KickCheaters = true, -- true = Kick Player that tries to Cheat Garage by changing Vehicle Hash/Plate.
@@ -26,7 +26,7 @@ Config.Blips = {
 }
 
 Config.Ambulance = {
-	Garages = true, -- true = Allows use of Ambulance Garages.
+	Garages = false, -- true = Allows use of Ambulance Garages.
 	Pounds = true, -- true = Allows use of Ambulance Pounds.
 	Blips = true, -- true = Use Ambulance Blips.
 	PoundP = 80, -- How much it Costs to get Vehicles from Ambulance Pound.
@@ -38,7 +38,7 @@ Config.Ambulance = {
 }
 
 Config.Police = {
-	Garages = true, -- true = Allows use of Police Garages.
+	Garages = false, -- true = Allows use of Police Garages.
 	Pounds = true, -- true = Allows use of Police Pounds.
 	Blips = true, -- true = Use Police Blips.
 	PoundP = 80, -- How much it Costs to get Vehicles from Police Pound.
@@ -50,7 +50,7 @@ Config.Police = {
 }
 
 Config.Mechanic = {
-	Garages = true, -- true = Allows use of Mechanic Garages.
+	Garages = false, -- true = Allows use of Mechanic Garages.
 	Pounds = true, -- true = Allows use of Mechanic Pounds.
 	Blips = true, -- true = Use Mechanic Blips.
 	PoundP = 150, -- How much it Costs to get Vehicles from Mechanic Pound.
@@ -62,7 +62,7 @@ Config.Mechanic = {
 }
 
 Config.Aircrafts = {
-	Garages = true, -- true = Allows use of Aircraft Garages.
+	Garages = false, -- true = Allows use of Aircraft Garages.
 	Blips = true, -- true = Use Aircraft Blips.
 	PoundP = 2500, -- How much it Costs to get Vehicles from Aircraft Pound.
 	Markers = {
@@ -84,7 +84,7 @@ Config.Boats = {
 }
 
 Config.Cars = {
-	Garages = true, -- true = Allows use of Car Garages.
+	Garages = false, -- true = Allows use of Car Garages.
 	Blips = true, -- true = Use Car Blips.
 	PoundP = 300, -- How much it Costs to get Vehicles from Car Pound.
 	Markers = {
@@ -95,7 +95,7 @@ Config.Cars = {
 }
 
 Config.Pvt = {
-	Garages = true, -- Set to true if using esx_property & want Private Car Garages for Properties
+	Garages = false, -- Set to true if using esx_property & want Private Car Garages for Properties
 	Markers = {
 		Points = {Type = 1, r = 0, g = 255, b = 0, x = 1.5, y = 1.5, z = 1.0}, -- Green Color / Standard Size Circle.
 		Delete = {Type = 1, r = 255, g = 0, b = 0, x = 5.0, y = 5.0, z = 1.0} -- Red Color / Big Size Circle.
@@ -206,10 +206,10 @@ Config.AircraftPounds = {
 -- Start of Boats
 Config.BoatGarages = {
 	Los_Santos_Dock = {
-		Marker = vector3(-735.87, -1325.08, 0.6),
-		Spawner = vector3(-718.87, -1320.18, -0.47),
-		Deleter = vector3(-731.15, -1334.71, -0.47),
-		Heading = 45.0
+		Marker = vector3(-786.59, -1489.66, 0.5),
+		Spawner = vector3(-819.53, -1470.48, 0.12),
+		Deleter = vector3(-811.85, -1482.34, 0.11),
+		Heading = 140.0
 	},
 	Sandy_Shores_Dock = {
 		Marker = vector3(1333.2, 4269.92, 30.5),
@@ -237,10 +237,10 @@ Config.BoatPounds = {
 -- Start of Cars
 Config.CarGarages = {
 	Los_Santos = {
-		Marker = vector3(215.80, -810.06, 29.73),
-		Spawner = vector3(229.70, -800.12, 29.57),
-		Deleter = vector3(223.80, -760.42, 29.65),
-		Heading = 157.84
+		Marker = vector3(-359.52, -76.08, 44.70),
+		Spawner = vector3(-364.52, -76.08, 44.70),
+		Deleter = vector3(-351.52, -80.08, 44.70),
+		Heading = Heading = 70.00
 	},
 	Sandy_Shores = {
 		Marker = vector3(1737.59, 3710.2, 33.14),
@@ -258,8 +258,8 @@ Config.CarGarages = {
 
 Config.CarPounds = {
 	Los_Santos = {
-		Marker = vector3(408.61, -1625.47, 28.29),
-		Spawner = vector3(405.64, -1643.4, 27.61),
+		Marker = vector3(-342.44, -88.57, 44.41),
+		Spawner = vector3(-364.52, -76.08, 44.70),
 		Heading = 229.54
 	},
 	Sandy_Shores = {
