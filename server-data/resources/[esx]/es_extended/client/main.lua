@@ -1,14 +1,9 @@
 local isPaused, isDead, pickups = false, false, {}
 
 if not Config.MultiCharacter then
-	Citizen.CreateThread(function()
-		while true do
-			Citizen.Wait(0)
-			if NetworkIsPlayerActive(PlayerId()) then
-				TriggerServerEvent('esx:onPlayerJoined')
-				break
-			end
-		end
+	RegisterNetEvent('myMultichar:loaded')
+	AddEventHandler('myMultichar:loaded', function()
+    	TriggerServerEvent('esx:onPlayerJoined')
 	end)
 else
 	RegisterNetEvent('esx:kashloaded')
@@ -23,19 +18,19 @@ AddEventHandler('esx:playerLoaded', function(playerData)
 	ESX.PlayerData = playerData
 	if not Config.MultiCharacter then
 		-- check if player is coming from loading screen
-		if GetEntityModel(PlayerPedId()) == GetHashKey('PLAYER_ZERO') then
-			local defaultModel = GetHashKey('a_m_y_stbla_02')
-			RequestModel(defaultModel)
+		-- if GetEntityModel(PlayerPedId()) == GetHashKey('PLAYER_ZERO') then
+		-- 	local defaultModel = GetHashKey('a_m_y_stbla_02')
+		-- 	RequestModel(defaultModel)
 
-			while not HasModelLoaded(defaultModel) do
-				Citizen.Wait(10)
-			end
+		-- 	while not HasModelLoaded(defaultModel) do
+		-- 		Citizen.Wait(10)
+		-- 	end
 
-			SetPlayerModel(PlayerId(), defaultModel)
-			SetPedDefaultComponentVariation(PlayerPedId())
-			SetPedRandomComponentVariation(PlayerPedId(), true)
-			SetModelAsNoLongerNeeded(defaultModel)
-		end
+		-- 	SetPlayerModel(PlayerId(), defaultModel)
+		-- 	SetPedDefaultComponentVariation(PlayerPedId())
+		-- 	SetPedRandomComponentVariation(PlayerPedId(), true)
+		-- 	SetModelAsNoLongerNeeded(defaultModel)
+		-- end
 	end
 	-- freeze the player
 	FreezeEntityPosition(PlayerPedId(), true)
@@ -66,23 +61,16 @@ AddEventHandler('esx:playerLoaded', function(playerData)
 		})
 	end
 	if not Config.MultiCharacter then
-		ESX.Game.Teleport(PlayerPedId(), {
-			x = playerData.coords.x,
-			y = playerData.coords.y,
-			z = playerData.coords.z + 0.25,
-			heading = playerData.coords.heading
-		}, function()
-			TriggerServerEvent('esx:onPlayerSpawn')
-			TriggerEvent('esx:onPlayerSpawn')
-			TriggerEvent('playerSpawned') -- compatibility with old scripts, will be removed soon
-			TriggerEvent('esx:restoreLoadout')
+		TriggerServerEvent('esx:onPlayerSpawn')
+		TriggerEvent('esx:onPlayerSpawn')
+		TriggerEvent('playerSpawned') -- compatibility with old scripts, will be removed soon
+		TriggerEvent('esx:restoreLoadout')
 	
-			Citizen.Wait(3000)
-			ShutdownLoadingScreen()
-			FreezeEntityPosition(PlayerPedId(), false)
-			DoScreenFadeIn(10000)
-			StartServerSyncLoops()
-		end)
+		Citizen.Wait(0)
+		ShutdownLoadingScreen()
+		FreezeEntityPosition(PlayerPedId(), false)
+		DoScreenFadeIn(0)
+		StartServerSyncLoops()	
 	else
 		TriggerServerEvent('esx:onPlayerSpawn')
 		TriggerEvent('esx:onPlayerSpawn')
